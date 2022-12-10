@@ -20,7 +20,6 @@ class HomeFragment : Fragment() {
     ): View? {
 
 
-        recyclerView =
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RvAdapterCategories()
 
