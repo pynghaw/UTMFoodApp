@@ -8,25 +8,27 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.utmfoodapp.R
+import com.example.utmfoodapp.databinding.FragmentHomeBinding
 import com.example.utmfoodapp.rv_adapter.RvAdapterCategories
 
 class HomeFragment : Fragment() {
 
-    private lateinit var recyclerView : RecyclerView
+    private lateinit var binding : FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = RvAdapterCategories()
+         binding = FragmentHomeBinding.inflate(inflater,container,false)
 
 
+        binding.rvCategories.layoutManager = LinearLayoutManager(context)
+        binding.rvCategories.adapter = RvAdapterCategories()
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        return binding.root
 
     }
 

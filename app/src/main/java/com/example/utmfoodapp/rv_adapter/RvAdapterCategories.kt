@@ -9,7 +9,6 @@ class RvAdapterCategories : RecyclerView.Adapter<CategoriesViewHolder>(){
 
     val categories = listOf<String>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val listItemCategories = layoutInflater.inflate(R.layout.list_item_categories,parent,false)
