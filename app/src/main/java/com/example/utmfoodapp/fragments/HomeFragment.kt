@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.utmfoodapp.R
 import com.example.utmfoodapp.databinding.FragmentHomeBinding
 import com.example.utmfoodapp.rv_adapter.RvAdapterCategories
+import com.example.utmfoodapp.rv_adapter.RvAdapterPopularArked
+import com.example.utmfoodapp.rv_adapter.RvAdapterPopularFood
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -19,16 +22,35 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentHomeBinding.inflate(inflater,container,false)
 
-         binding = FragmentHomeBinding.inflate(inflater,container,false)
+        rvCategoriesList()
+        rvPopularFoodList()
+        rvPopularArkedList()
 
+        return binding.root
 
-        binding.rvCategories.layoutManager = LinearLayoutManager(context)
+    }
+
+    private fun rvCategoriesList(){
+        //set recycle view to horizontal
+        binding.rvCategories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvCategories.adapter = RvAdapterCategories()
 
 
+    }
 
-        return binding.root
+    private fun rvPopularFoodList(){
+        binding.rvPopularFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCategories.adapter = RvAdapterPopularFood()
+
+
+    }
+
+    private fun rvPopularArkedList(){
+        binding.rvPopularArked.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCategories.adapter = RvAdapterPopularArked()
+
 
     }
 

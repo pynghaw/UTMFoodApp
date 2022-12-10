@@ -2,7 +2,9 @@
 <resources>
     <color name="orange">#FF5E00</color>
     <color name="red">#9E1318</color>
+    <color name="light_red">#EFA6A4</color>
     <color name="yellow">#FFFFEB3B</color>
+    <color name="pink">#FFB6C1</color>
     <color name="searchColour">#EAE8E8</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
