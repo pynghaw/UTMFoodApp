@@ -8,6 +8,7 @@
     tools:context=".fragments.HomeFragment">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/colorFood"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:cardBackgroundColor="@color/yellow"
@@ -34,9 +35,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginBottom="1dp"
+
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
                 android:maxEms="10"
                 android:maxLines="2"
                 android:text="Food"
