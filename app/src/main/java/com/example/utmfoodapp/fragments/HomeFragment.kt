@@ -14,6 +14,7 @@ import com.example.utmfoodapp.databinding.FragmentHomeBinding
 import com.example.utmfoodapp.rv_adapter.RvAdapterCategories
 import com.example.utmfoodapp.rv_adapter.RvAdapterPopularArked
 import com.example.utmfoodapp.rv_adapter.RvAdapterPopularFood
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -29,17 +30,27 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
 
-        rvCategoriesList()
+//        rvCategoriesList()
 //        rvPopularFoodList()
-//        rvPopularArkedList()
+        rvPopularArkedList()
 
         return binding.root
-
     }
+
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rvCategories.apply {
+
+
+        }
+    }
+
 
     private fun rvCategoriesList(){
         //set recycle view to horizontal
         binding.rvCategories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCategories.setHasFixedSize(true)
 
         categoriesList = ArrayList()
         //add data here
@@ -53,24 +64,26 @@ class HomeFragment : Fragment() {
 
     private fun rvPopularFoodList(){
         binding.rvPopularFood.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvPopularFood.setHasFixedSize(true)
 
         popularFoodList = ArrayList()
         popularFoodList.add(FoodDomain(R.drawable.im_chickenchop,"Chicken Chop"))
         popularFoodList.add(FoodDomain(R.drawable.im_pattaya,"Nasi Goreng Pattaya"))
 
 
-        binding.rvCategories.adapter = RvAdapterPopularFood(popularFoodList)
+        binding.rvPopularFood.adapter = RvAdapterPopularFood(popularFoodList)
     }
 
     private fun rvPopularArkedList(){
         binding.rvPopularArked.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvPopularArked.setHasFixedSize(true)
 
         popularArkedList = ArrayList()
         popularArkedList.add(ArkedDomain(R.drawable.im_meranti,"Arked Meranti"))
         popularArkedList.add(ArkedDomain(R.drawable.im_cengal,"Arked Cengal"))
         popularArkedList.add(ArkedDomain(R.drawable.im_lestari,"Arked Lestari"))
 
-        binding.rvCategories.adapter = RvAdapterPopularArked(popularArkedList)
+        binding.rvPopularArked.adapter = RvAdapterPopularArked(popularArkedList)
     }
 
 }
